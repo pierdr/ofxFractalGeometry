@@ -9,8 +9,9 @@ While working on [Non-Viral Series](http://www.pierdr.com/Non-viral-series) I us
 ## Developer guide
 All the functions in ofxFractalGeometry are stastic functions.
 
-To see basic usage of the addon, see the [example code](fractalGeometryExample/src/testApp.cpp)
+To explore the functions see the [example code](fractalGeometryExample/src/testApp.cpp)
 
+Tested on macOS 10.13 and of 0.9.8
 
 ## [Example](fractalGeometryExample/)
 Shows how to use all the functions of the addon. You can cycle through all the helper functions just moving left and right with the arrow keys.
