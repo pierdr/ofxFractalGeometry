@@ -172,5 +172,14 @@ ofPoint ofxFractalGeometry::convertPoint3DtoFake2D(float x1, float y1, float z1)
 {
     return pointAtAbsoluteAngle(ofPoint(x1,y1), - z1, PI/8);
 }
+float ofxFractalGeometry::distanceBetweenPointAndLine(ofPoint p0,gLine g){
+   
+    return ofxFractalGeometry::distanceBetweenPointAndLine(p0, g.p0, g.p1);
+}
+float ofxFractalGeometry::distanceBetweenPointAndLine(ofPoint p0, ofPoint pl0,ofPoint pl1)
+{
+   return ( abs( ((pl1.y-pl0.y)*p0.x) - ((pl1.x-pl0.x)*p0.y) + (pl1.x*pl0.y) - (pl1.y*pl0.x)   )/ofxFractalGeometry::distanceBetweenTwoPoints(pl0, pl1));
+    
+}
 
 
