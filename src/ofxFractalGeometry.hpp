@@ -21,10 +21,11 @@ public:
     static ofPoint pointAtRelativeAngle(ofPoint p0, ofPoint p1, float distance, float angle);
     static void    perpendicularPoints(ofPoint p0, ofPoint p1, ofPoint* endPoints, float distance);
     static ofPoint perpendicularPoint(ofPoint p0, ofPoint p1, ofPoint planePoint, float distance);
-    static Boolean pointOnPlane(ofPoint p0, ofPoint p1, ofPoint planePoint, ofPoint targetPoint);
+    static bool pointOnPlane(ofPoint p0, ofPoint p1, ofPoint planePoint, ofPoint targetPoint);
     static ofPoint closestPointOnLineFromPoint(ofPoint p0, ofPoint p1, ofPoint pT);
     static ofPoint middlePoint(ofPoint p0,ofPoint p1);
     static float distanceBetweenTwoPoints(ofPoint p0,ofPoint p1);
+    static ofPoint pointBetweenTwoPointsWithPercentage(ofPoint p0,ofPoint p1,float percentage);
     //------
     static bool isRightTurn(ofPoint a, ofPoint b, ofPoint c);
     static vector<ofPoint> getConvexHull(vector<ofPoint> points);

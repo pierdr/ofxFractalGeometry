@@ -59,7 +59,7 @@ ofPoint ofxFractalGeometry::perpendicularPoint(ofPoint p0, ofPoint p1, ofPoint p
         return endPoints[0];
     }
 }
-Boolean ofxFractalGeometry::pointOnPlane(ofPoint p0, ofPoint p1, ofPoint planePoint, ofPoint targetPoint){
+bool ofxFractalGeometry::pointOnPlane(ofPoint p0, ofPoint p1, ofPoint planePoint, ofPoint targetPoint){
     ofPoint pPlaneOnLine = ofxFractalGeometry::closestPointOnLineFromPoint(p0, p1, planePoint);
     ofPoint pTargetOnLine= ofxFractalGeometry::closestPointOnLineFromPoint(p0, p1, targetPoint);
     float pPlaneX = pPlaneOnLine.x-planePoint.x;
@@ -172,5 +172,7 @@ ofPoint ofxFractalGeometry::convertPoint3DtoFake2D(float x1, float y1, float z1)
 {
     return pointAtAbsoluteAngle(ofPoint(x1,y1), - z1, PI/8);
 }
-
+ofPoint ofxFractalGeometrypointBetweenTwoPointsWithPercentage(ofPoint p0,ofPoint p1,float percentage){
+    return ofPoint(((p0.x*(1-percentage))+(p1.x*(percentage)))/2,(p0.y*(1-percentage)+p1.y*percentage)/2);
+}
 
