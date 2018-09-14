@@ -12,33 +12,6 @@
 #include <stdio.h>
 #include "ofMain.h"
 
-class ofxFractalGeometry{
-public:
-    ofxFractalGeometry();
-    
-    static ofPoint pointOnLine(ofPoint p0, ofPoint p1, float distance);
-    static ofPoint pointAtAbsoluteAngle(ofPoint p0,float distance, float angle);
-    static ofPoint pointAtRelativeAngle(ofPoint p0, ofPoint p1, float distance, float angle);
-    static void    perpendicularPoints(ofPoint p0, ofPoint p1, ofPoint* endPoints, float distance);
-    static ofPoint perpendicularPoint(ofPoint p0, ofPoint p1, ofPoint planePoint, float distance);
-    static bool pointOnPlane(ofPoint p0, ofPoint p1, ofPoint planePoint, ofPoint targetPoint);
-    static ofPoint closestPointOnLineFromPoint(ofPoint p0, ofPoint p1, ofPoint pT);
-    static ofPoint middlePoint(ofPoint p0,ofPoint p1);
-    static float distanceBetweenTwoPoints(ofPoint p0,ofPoint p1);
-    static ofPoint pointBetweenTwoPointsWithPercentage(ofPoint p0,ofPoint p1,float percentage);
-    //------
-    static bool isRightTurn(ofPoint a, ofPoint b, ofPoint c);
-    static vector<ofPoint> getConvexHull(vector<ofPoint> points);
-    static ofPoint findEqualDetourPoint(ofPoint a, ofPoint b, ofPoint c);
-    static ofPoint convertPoint3DtoFake2D(float x1, float y1, float z1);
-    
-    
-    static void hello(){
-        printf("\nhello\n");
-    }
-private:
-    static bool lexicalComparison(const ofPoint& v1, const ofPoint& v2);
-};
 class gLine
 {
 public:
@@ -70,6 +43,40 @@ public:
         ofDrawLine(this->p0,this->p1);
     }
 };
+
+class ofxFractalGeometry{
+public:
+    ofxFractalGeometry();
+    
+    static ofPoint pointOnLine(ofPoint p0, ofPoint p1, float distance);
+    static ofPoint pointAtAbsoluteAngle(ofPoint p0,float distance, float angle);
+    static ofPoint pointAtRelativeAngle(ofPoint p0, ofPoint p1, float distance, float angle);
+    static void    perpendicularPoints(ofPoint p0, ofPoint p1, ofPoint* endPoints, float distance);
+    static ofPoint perpendicularPoint(ofPoint p0, ofPoint p1, ofPoint planePoint, float distance);
+    static bool pointOnPlane(ofPoint p0, ofPoint p1, ofPoint planePoint, ofPoint targetPoint);
+    static ofPoint closestPointOnLineFromPoint(ofPoint p0, ofPoint p1, ofPoint pT);
+    static ofPoint middlePoint(ofPoint p0,ofPoint p1);
+    static float distanceBetweenTwoPoints(ofPoint p0,ofPoint p1);
+    static float distanceBetweenPointAndLine(ofPoint p0,gLine g);
+    static float distanceBetweenPointAndLine(ofPoint p0, ofPoint pl0,ofPoint pl1);
+    
+    static ofPoint pointBetweenTwoPointsWithPercentage(ofPoint p0,ofPoint p1,float percentage);
+    //------
+    static bool isRightTurn(ofPoint a, ofPoint b, ofPoint c);
+    static vector<ofPoint> getConvexHull(vector<ofPoint> points);
+    static ofPoint findEqualDetourPoint(ofPoint a, ofPoint b, ofPoint c);
+    static ofPoint convertPoint3DtoFake2D(float x1, float y1, float z1);
+    
+    
+    static void hello(){
+        printf("\nhello\n");
+    }
+private:
+    static bool lexicalComparison(const ofPoint& v1, const ofPoint& v2);
+};
+
+
+
 class gCircle
 {
 public:
